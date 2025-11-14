@@ -1,0 +1,32 @@
+<div class="search-wrapper">
+    <input type="text" placeholder="Search by name..." [value]="searchTerm" (input)="onSearch($event.target.value)" />
+</div>
+
+<div *ngIf="loading">Loading users...</div>
+<div *ngIf="error" class="error">Failed to load users</div>
+
+<table *ngIf="!loading && !error">
+    <caption>Users List</caption>
+
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>City</th>
+            <th>Company</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let user of filteredUsers" (click)="onUserClick(user.id)">
+            <td>{{ user.name }}</td>
+            <td>{{ user.username }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.phone }}</td>
+            <td>{{ user.address.city }}</td>
+            <td>{{ user.company.name }}</td>
+        </tr>
+    </tbody>
+</table>
