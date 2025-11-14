@@ -1,0 +1,1 @@
+import{P as r,r as s,w as o}from"./chunk-ANP2DXMA.js";var a=class t{static \u0275fac=function(e){return new(e||t)};static \u0275cmp=s({type:t,selectors:[["app-users-layout"]],decls:1,vars:0,template:function(e,u){e&1&&o(0,"router-outlet")},dependencies:[r],encapsulation:2})};export{a as UsersLayout};
